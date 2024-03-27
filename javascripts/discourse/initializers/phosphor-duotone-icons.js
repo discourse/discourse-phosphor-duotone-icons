@@ -169,7 +169,10 @@ function initIcons(api) {
   api.replaceIcon("notification.bookmark_reminder", "ph-dt-clock");
   api.replaceIcon("notification.edited", "ph-dt-pencil");
   api.replaceIcon("notification.chat_quoted", "ph-dt-quotes");
-  api.replaceIcon("notification.discourse_assign.assign_group_notification", "ph-dt-users-three");
+  api.replaceIcon(
+    "notification.discourse_assign.assign_group_notification",
+    "ph-dt-users-three"
+  );
   api.replaceIcon("notification.granted_badge", "ph-dt-seal");
   api.replaceIcon("notification.group_mentioned", "ph-dt-users");
   api.replaceIcon("notification.group_message_summary", "ph-dt-users");
@@ -181,8 +184,14 @@ function initIcons(api) {
   api.replaceIcon("notification.liked_many", "ph-dt-heart");
   api.replaceIcon("notification.liked", "ph-dt-heart");
   api.replaceIcon("notification.linked", "ph-dt-link-simple-horizontal");
-  api.replaceIcon("notification.membership_request_accepted", "ph-dt-user-plus");
-  api.replaceIcon("notification.membership_request_consolidated", "ph-dt-users");
+  api.replaceIcon(
+    "notification.membership_request_accepted",
+    "ph-dt-user-plus"
+  );
+  api.replaceIcon(
+    "notification.membership_request_consolidated",
+    "ph-dt-users"
+  );
   api.replaceIcon("notification.mentioned", "ph-dt-at");
   api.replaceIcon("notification.moved_post", "ph-dt-arrow-square-out");
   api.replaceIcon("notification.post_approved", "ph-dt-check");
@@ -266,4 +275,3 @@ export default {
     withPluginApi("0.10.1", initIcons);
   },
 };
-
