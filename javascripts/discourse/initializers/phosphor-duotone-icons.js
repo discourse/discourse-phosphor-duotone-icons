@@ -272,6 +272,6 @@ function initIcons(api) {
 export default {
   name: "phosphor-duotone-icons",
   initialize() {
-    withPluginApi("0.10.1", initIcons);
+    withPluginApi(initIcons);
   },
 };
