@@ -1,0 +1,14 @@
+weight:
+  default: regular
+  type: enum
+  refresh: true
+  choices:
+    - light
+    - regular
+    - bold
+    - duotone
+ignored_icons:
+  default: ""
+  type: list
+  list_type: compact
+  refresh: true

@@ -1,0 +1,6 @@
+en:
+  theme_metadata:
+    description: "Phosphor icons for Discourse"
+    settings:
+      weight: "Which Phosphor icon weight to use. Changing this swaps every replaced icon to the selected style."
+      ignored_icons: "Don't replace these icons with Phosphor icons. Use the default Font Awesome icon instead."
