@@ -1,8 +1,8 @@
 {
-  "name": "discourse-phosphor-duotone-icons",
-  "description": "Phosphor Duotone icons for Discourse",
+  "name": "Discourse Phosphor Icons",
+  "description": "Replaces Discourse icons with the Phosphor icon set",
   "about_url": null,
-  "license_url": null,
+  "license_url": "https://github.com/discourse/discourse-phosphor-icons/blob/main/LICENSE",
   "component": true,
   "assets": {
     "icons-sprite": "/assets/icons-sprite.svg"
