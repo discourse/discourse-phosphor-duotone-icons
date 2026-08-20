@@ -1,16 +1,13 @@
 // Generates assets/icons-sprite.svg from @phosphor-icons/core (run `pnpm build`).
 // Emits one <symbol> per selectable weight as `ph-{weight}-{name}`, plus a
-// `ph-fill-{name}` for each FORCE_FILL icon. All weights ship in one sprite
-// because Discourse inlines a theme's whole sprite — per-weight loading would
-// need core support.
+// `ph-fill-{name}` for each FORCE_FILL icon, and the icon-map.json that
+// about.json's `icon_set` points at. Core resolves the map server-side and
+// bundles only the glyphs actually rendered, so shipping every weight here
+// costs nothing at request time.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import {
-  FORCE_FILL,
-  ICON_MAP,
-  WEIGHTS,
-} from "../javascripts/discourse/lib/icon-map.js";
+import { FORCE_FILL, ICON_MAP, WEIGHTS } from "./icon-map.mjs";
 
 const STATE_WEIGHT = "fill";
 
@@ -73,3 +70,23 @@ writeFileSync(join(root, "assets", "icons-sprite.svg"), sprite);
 console.log(
   `Wrote ${symbols.length} symbols (${names.length} icons × ${WEIGHTS.length} weights + ${fillNames.length} fill states).`
 );
+
+// The icon map core reads (about.json `icon_set`): canonical Discourse icon
+// name -> sprite symbol id. `{weight}` resolves from the `weight` theme
+// setting; FORCE_FILL icons pin the filled variant instead.
+const iconMap = Object.fromEntries(
+  Object.entries(ICON_MAP).map(([faIcon, name]) => [
+    faIcon,
+    FORCE_FILL.includes(faIcon)
+      ? `ph-${STATE_WEIGHT}-${name}`
+      : `ph-{weight}-${name}`,
+  ])
+);
+
+writeFileSync(
+  join(root, "assets", "icon-map.json"),
+  `${JSON.stringify(iconMap, null, 2)}\n`
+);
+
+// eslint-disable-next-line no-console
+console.log(`Wrote ${Object.keys(iconMap).length} icon map entries.`);

@@ -6,5 +6,8 @@
   "component": true,
   "assets": {
     "icons-sprite": "/assets/icons-sprite.svg"
+  },
+  "icon_set": {
+    "map": "/assets/icon-map.json"
   }
 }
