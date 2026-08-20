@@ -1,7 +1,7 @@
 // Source of truth for FontAwesome -> Phosphor icon name mappings.
-// Imported by the api-initializer at runtime and by scripts/generate-sprite.mjs
-// at build time. After editing, run `pnpm build` to regenerate the sprite.
-// Names are weight-agnostic; the chosen weight is applied at runtime.
+// Imported by scripts/generate-sprite.mjs at build time. After editing, run
+// `pnpm build` to regenerate the sprite and server-side icon map.
+// Names are weight-agnostic; core resolves the selected weight when bundling.
 
 // Weights an admin can choose from (kept in sync with settings.yml). `fill` is
 // intentionally excluded — filled is a product state, applied only to the
@@ -29,6 +29,7 @@ export const ICON_MAP = {
   "arrow-rotate-left": "arrow-counter-clockwise",
   "arrow-rotate-right": "arrow-clockwise",
   "arrow-up": "arrow-up",
+  "arrow-up-from-bracket": "upload-simple",
   "arrows-rotate": "arrow-clockwise",
   asterisk: "asterisk",
   at: "at",
@@ -180,6 +181,7 @@ export const ICON_MAP = {
   "far-circle": "circle",
   "far-circle-check": "check-circle",
   "far-circle-dot": "radio-button",
+  "far-circle-question": "question",
   "far-clipboard": "clipboard",
   "far-clock": "clock",
   "far-comment": "chat-centered",
@@ -230,6 +232,7 @@ export const ICON_MAP = {
   "forward-step": "skip-forward",
   gavel: "gavel",
   gear: "gear",
+  gif: "gif",
   gift: "gift",
   globe: "globe",
   "graduation-cap": "graduation-cap",
