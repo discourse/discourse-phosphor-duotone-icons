@@ -26,7 +26,7 @@ pnpm build
 
 `pnpm build` runs [`scripts/generate-sprite.mjs`](scripts/generate-sprite.mjs), which writes two committed files: `assets/icons-sprite.svg` (one `<symbol>` per weight) and `assets/icon-map.json` (the map `about.json` points at). Commit both.
 
-The component ships no JavaScript. `about.json` declares an `icon_set`, and Discourse resolves that map server-side, serving each mapped glyph under its canonical icon id — so only the weight actually in use is bundled. Raw `ph-*` ids are not shipped automatically, so a client-only call such as `api.replaceIcon("x", "ph-duotone-star")` will not make that target available. Downstream code should use canonical icon ids or explicitly register a raw source id server-side.
+The component ships no JavaScript. `about.json` declares an `icon_set`, and Discourse resolves that map server-side, serving each mapped glyph under its canonical icon id — so only the weight actually in use is bundled. Raw `ph-*` ids are not shipped automatically. A small curated set of weight-agnostic `ph-*` aliases is declared in `scripts/icon-map.mjs` for downstream theme components; add an alias there and rebuild when a component needs another exact Phosphor glyph. A client-only call such as `api.replaceIcon("x", "ph-duotone-star")` will not make an undeclared target available.
 
 ## Attribution
 
