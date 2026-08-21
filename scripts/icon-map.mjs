@@ -313,6 +313,17 @@ export const ICON_MAP = {
   "pen-to-square": "pencil",
   pencil: "pencil",
   "pencil-alt": "pencil-simple",
+  // Weight-agnostic direct aliases for downstream theme components. These
+  // remain opt-in: only explicitly listed Phosphor glyphs are added to the
+  // generated sprite rather than shipping the entire upstream icon set.
+  "ph-chats-circle": "chats-circle",
+  "ph-chats-circle-fill": "chats-circle",
+  "ph-house": "house",
+  "ph-list-star": "list-star",
+  "ph-play-circle": "play-circle",
+  "ph-storefront": "storefront",
+  "ph-users-three": "users-three",
+  "ph-users-three-fill": "users-three",
   play: "play",
   plug: "plug",
   plus: "plus",
@@ -414,4 +425,6 @@ export const FORCE_FILL = [
   "check-square",
   "d-liked",
   "vote-up-filled",
+  "ph-chats-circle-fill",
+  "ph-users-three-fill",
 ];
