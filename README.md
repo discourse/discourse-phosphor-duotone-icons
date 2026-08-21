@@ -11,6 +11,11 @@ The `weight` setting lets you pick the Phosphor style used across the whole site
 
 Not every Font Awesome icon has a direct Phosphor equivalent. To map additional icons, see [Replace Discourse's default SVG icons with custom icons in a theme](https://meta.discourse.org/t/replace-discourses-default-svg-icons-with-custom-icons-in-a-theme/115905).
 
+The component also exposes a small curated set of weight-aware `ph-*` aliases
+for downstream theme components that need an exact Phosphor glyph. Add an alias
+to `ICON_MAP` and rebuild when another direct glyph is needed; raw `ph-*` names
+are not bundled automatically.
+
 ## Developing
 
 The Font Awesome → Phosphor mappings live in [`javascripts/discourse/lib/icon-map.js`](javascripts/discourse/lib/icon-map.js) (used both at runtime by the initializer and at build time). After editing them, regenerate the sprite from [`@phosphor-icons/core`](https://github.com/phosphor-icons/core):
